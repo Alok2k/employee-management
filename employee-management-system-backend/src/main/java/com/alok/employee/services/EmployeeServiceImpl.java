@@ -1,5 +1,6 @@
 package com.alok.employee.services;
 
+import com.alok.employee.customexception.EmptyInputException;
 import com.alok.employee.model.Employee;
 import com.alok.employee.entity.EmployeeEntity;
 import com.alok.employee.repository.EmployeeRepository;
@@ -7,6 +8,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 @Service
@@ -15,16 +17,18 @@ public class EmployeeServiceImpl implements EmployeeService{
     private EmployeeRepository employeeRepository;
 
     public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
+
         this.employeeRepository = employeeRepository;
     }
 
     @Override
-    public Employee createEmployee(Employee employee) {
-        EmployeeEntity employeeEntity = new EmployeeEntity();
-
-        BeanUtils.copyProperties(employee, employeeEntity);
-        employeeRepository.save(employeeEntity);
-        return employee;
+    public EmployeeEntity createEmployee(EmployeeEntity employee) {
+        if (employee.getFirstName().isEmpty()||employee.getEmailId().isEmpty()){
+            throw new EmptyInputException("666","input fields are null");
+        }
+        EmployeeEntity savedEmployee = employeeRepository.save(employee);
+//        savedEmployee=  employeeRepository.save(employee);
+        return savedEmployee;
     }
 
     @Override
@@ -51,12 +55,13 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
 
     @Override
-    public Employee getEmployeeById(Long id) {
-        EmployeeEntity employeeEntity
-                = employeeRepository.findById(id).get();
-        Employee employee = new Employee();
-        BeanUtils.copyProperties(employeeEntity, employee);
-        return employee;
+    public EmployeeEntity getEmployeeById(Long id) {
+        if (employeeRepository.findById(id).isEmpty()){
+            throw new NoSuchElementException();
+        }
+        EmployeeEntity employeeEntity = employeeRepository.findById(id).get();
+        return employeeEntity;
+
     }
 
     @Override

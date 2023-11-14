@@ -1,5 +1,6 @@
 package com.alok.employee.controller;
 
+import com.alok.employee.entity.EmployeeEntity;
 import com.alok.employee.model.Employee;
 import com.alok.employee.services.EmployeeService;
 import org.springframework.http.ResponseEntity;
@@ -21,12 +22,13 @@ public class EmployeeController {
     }
 
     @PostMapping("/employees")
-    public Employee createEmployee(@RequestBody Employee employee) {
+    public EmployeeEntity createEmployee(@RequestBody EmployeeEntity employee) {
         return employeeService.createEmployee(employee);
     }
 
-    @GetMapping("/employees")
+    @GetMapping("/getEmployees")
     public List<Employee> getAllEmployees() {
+
         return  employeeService.getAllEmployees();
     }
 
@@ -40,9 +42,9 @@ public class EmployeeController {
     }
 
     @GetMapping("/employees/{id}")
-    public ResponseEntity<Employee> getEmployeeById(@PathVariable Long id) {
-        Employee employee = null;
-        employee = employeeService.getEmployeeById(id);
+    public ResponseEntity<EmployeeEntity> getEmployeeById(@PathVariable Long id) {
+        EmployeeEntity employee = employeeService.getEmployeeById(id);
+//        employee = employeeService.getEmployeeById(id);
         return ResponseEntity.ok(employee);
     }
 

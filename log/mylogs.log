@@ -1,0 +1,62 @@
+2023-11-17 01:51:26.173  INFO 11364 --- [main] c.a.e.EmployeeSystemApiApplication       : Starting EmployeeSystemApiApplication using Java 19.0.2 on LIN-5CG0114148 with PID 11364 (C:\Users\ALOBHATT\Downloads\employee-management-service-tutorial-main\employee-management\employee-management-system-backend\target\classes started by alobhatt in C:\Users\ALOBHATT\Downloads\employee-management-service-tutorial-main\employee-management)
+2023-11-17 01:51:26.177  INFO 11364 --- [main] c.a.e.EmployeeSystemApiApplication       : No active profile set, falling back to default profiles: default
+2023-11-17 01:51:27.717  INFO 11364 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-17 01:51:27.850  INFO 11364 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 111 ms. Found 1 JPA repository interfaces.
+2023-11-17 01:51:29.056  INFO 11364 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-17 01:51:29.072  INFO 11364 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-17 01:51:29.073  INFO 11364 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2023-11-17 01:51:29.227  INFO 11364 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-17 01:51:29.227  INFO 11364 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2929 ms
+2023-11-17 01:51:29.505  INFO 11364 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-17 01:51:29.596  INFO 11364 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.4.Final
+2023-11-17 01:51:29.916  INFO 11364 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-11-17 01:51:30.127  INFO 11364 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-17 01:51:30.139  WARN 11364 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2023-11-17 01:51:30.672  INFO 11364 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-17 01:51:30.698  INFO 11364 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2023-11-17 01:51:31.878  INFO 11364 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-17 01:51:31.889  INFO 11364 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-17 01:51:32.423  WARN 11364 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-17 01:51:32.941  WARN 11364 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2023-11-17 01:51:32.944  INFO 11364 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-17 01:51:32.946  INFO 11364 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-17 01:51:32.961  INFO 11364 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-17 01:51:32.964  INFO 11364 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-11-17 01:51:32.987  INFO 11364 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-11-17 01:51:33.018 ERROR 11364 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2023-11-17 01:52:53.262  INFO 47276 --- [main] c.a.e.EmployeeSystemApiApplication       : Starting EmployeeSystemApiApplication using Java 19.0.2 on LIN-5CG0114148 with PID 47276 (C:\Users\ALOBHATT\Downloads\employee-management-service-tutorial-main\employee-management\employee-management-system-backend\target\classes started by alobhatt in C:\Users\ALOBHATT\Downloads\employee-management-service-tutorial-main\employee-management)
+2023-11-17 01:52:53.267  INFO 47276 --- [main] c.a.e.EmployeeSystemApiApplication       : No active profile set, falling back to default profiles: default
+2023-11-17 01:52:54.477  INFO 47276 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-17 01:52:54.592  INFO 47276 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 96 ms. Found 1 JPA repository interfaces.
+2023-11-17 01:52:55.818  INFO 47276 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9098 (http)
+2023-11-17 01:52:55.844  INFO 47276 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-17 01:52:55.845  INFO 47276 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2023-11-17 01:52:56.001  INFO 47276 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-17 01:52:56.001  INFO 47276 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2640 ms
+2023-11-17 01:52:56.279  INFO 47276 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-17 01:52:56.398  INFO 47276 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.4.Final
+2023-11-17 01:52:56.708  INFO 47276 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-11-17 01:52:56.913  INFO 47276 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-17 01:52:56.923  WARN 47276 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2023-11-17 01:52:57.470  INFO 47276 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-17 01:52:57.494  INFO 47276 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2023-11-17 01:52:58.524  INFO 47276 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-17 01:52:58.535  INFO 47276 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-17 01:52:59.053  WARN 47276 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-17 01:52:59.596  INFO 47276 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9098 (http) with context path ''
+2023-11-17 01:52:59.613  INFO 47276 --- [main] c.a.e.EmployeeSystemApiApplication       : Started EmployeeSystemApiApplication in 7.124 seconds (JVM running for 7.905)

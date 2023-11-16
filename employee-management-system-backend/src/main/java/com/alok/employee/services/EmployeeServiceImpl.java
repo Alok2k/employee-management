@@ -6,7 +6,11 @@ import com.alok.employee.customexception.EmptyListException;
 import com.alok.employee.model.Employee;
 import com.alok.employee.entity.EmployeeEntity;
 import com.alok.employee.repository.EmployeeRepository;
+import lombok.extern.flogger.Flogger;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
@@ -16,15 +20,11 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
+@Slf4j
 public class EmployeeServiceImpl implements EmployeeService{
 
+    @Autowired
     private EmployeeRepository employeeRepository;
-
-    public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
-
-        this.employeeRepository = employeeRepository;
-    }
-
     @Override
     public EmployeeEntity createEmployee(EmployeeEntity employee) {
         if (employee.getFirstName().isEmpty()||employee.getEmailId().isEmpty()){
@@ -37,6 +37,8 @@ public class EmployeeServiceImpl implements EmployeeService{
     @Override
     public List<Employee> getAllEmployees() {
         List<EmployeeEntity> employeeEntities = employeeRepository.findAll();
+//        log.info("employee list working");
+
         try {
             if (employeeEntities.isEmpty()){
                 throw new EmptyListException();
@@ -50,10 +52,14 @@ public class EmployeeServiceImpl implements EmployeeService{
                                 emp.getLastName(),
                                 emp.getEmailId()))
                         .collect(Collectors.toList());
+//                log.info("working");
                 return employees;
+
             }
         } catch (Exception e) {
+//            log.error("error in listEmployee function");
             throw new RuntimeException(e);
+
         }
     }
 
@@ -63,6 +69,7 @@ public class EmployeeServiceImpl implements EmployeeService{
         if (employee != null) {
             employeeRepository.delete(employee);
             return true;
+
         } else {
             throw new EmptyInputException("555", "Employee not found for deletion");
         }
@@ -101,4 +108,7 @@ public class EmployeeServiceImpl implements EmployeeService{
             throw new RuntimeException("Error updating employee",e);
         }
     }
+
+
+
 }
